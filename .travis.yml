@@ -1,0 +1,17 @@
+language: rust
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+before_script:
+  - pip install 'travis-cargo<0.2' --user && export PATH=$HOME/.local/bin:$PATH
+
+script:
+  - |
+      travis-cargo build &&
+      travis-cargo test &&
+      travis-cargo doc &&
+      echo "Testing README" &&
+      rustdoc --test Readme.md -L dependency=./target/debug/deps --extern parse_result=./target/debug/libparse_result.rlib

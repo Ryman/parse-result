@@ -2,5 +2,8 @@
 name = "parse_result"
 version = "0.1.0"
 authors = ["Kevin Butler <haqkrs@gmail.com>"]
+description = "Add parse to Result"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ryman/parse-result"
 
 [dependencies]
